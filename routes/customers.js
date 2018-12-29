@@ -27,6 +27,22 @@ router.get('/', async (req, res) => {
     res.send(customer)
 });
 
+router.post('/', async (req, res) => {
+    const { error } = validateCustomer(req.body);
+    if (error) return res.status(400).send(error.details[0].message);
+    
+    let customer = new Customer({ 
+        name: req.body.name,
+        phone: req.body.phone,
+        isGold: req.body.isGold
+
+    });
+    customer = await customer.save();
+    res.send(customer);
+});
+
+// implementation of the remaining REST methods
+
 function validateCustomer(customer) {
     const schema = {
         name: Joi.string().min(5).max(50).required(),
