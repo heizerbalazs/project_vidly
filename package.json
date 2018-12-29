@@ -1,0 +1,23 @@
+{
+  "name": "project_vidly",
+  "version": "1.0.0",
+  "description": "\"# project_vidly\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heizerbalazs/project_vidly.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heizerbalazs/project_vidly/issues"
+  },
+  "homepage": "https://github.com/heizerbalazs/project_vidly#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "joi": "^14.3.1"
+  }
+}
