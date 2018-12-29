@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const reqresDebugger = require('debug')('vidly:reqres');
 const dbDebugger = require('debug')('vidly:db');
 const config = require('config');
+const customers = require('./routes/customers');
 const genres = require('./routes/genres');
 const homepage = require('./routes/homepage');
 const Joi = require('joi');
@@ -15,6 +16,7 @@ mongoose.connect('mongodb://localhost/vidly')
 app.use(express.json());
 app.set('view engine', 'pug');
 app.use(express.static(__dirname + '/views'));
+app.use('/api/customers', customers);
 app.use('/api/genres', genres);
 app.use('/', homepage);
 
