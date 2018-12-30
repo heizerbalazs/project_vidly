@@ -9,7 +9,7 @@ const Joi = require('joi');
 const express = require('express');
 const app = express();
 
-mongoose.connect('mongodb://localhost/vidly')
+mongoose.connect('mongodb://localhost/vidly', { useNewUrlParser: true })
         .then(() => dbDebugger('Connected to MongoDB...'))
         .catch(err => dbDebugger('Could not connect to MongoDB...', err));
 
