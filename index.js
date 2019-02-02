@@ -13,9 +13,12 @@ mongoose.connect('mongodb://localhost/vidly', { useNewUrlParser: true })
         .then(() => dbDebugger('Connected to MongoDB...'))
         .catch(err => dbDebugger('Could not connect to MongoDB...', err));
 
+
+// set up 3rd-party midddlewares
 app.use(express.json());
 app.set('view engine', 'pug');
 app.use(express.static(__dirname + '/views'));
+// set up middlewares
 app.use('/api/customers', customers);
 app.use('/api/genres', genres);
 app.use('/', homepage);
